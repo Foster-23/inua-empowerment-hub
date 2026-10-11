@@ -5,8 +5,8 @@ import { Download, FileText } from "lucide-react";
 export const Route = createFileRoute("/publications")({
   head: () => ({
     meta: [
-      { title: "Publications — INUA VIJANA" },
-      { name: "description", content: "Research reports, policy briefs and toolkits from INUA VIJANA." },
+      { title: "Publications — Inua Youth Initiative" },
+      { name: "description", content: "Research reports, policy briefs and toolkits from Inua Youth Initiative." },
     ],
   }),
   component: Publications,

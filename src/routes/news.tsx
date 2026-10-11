@@ -5,15 +5,15 @@ import { sitePhotos } from "@/lib/unsplash-images";
 export const Route = createFileRoute("/news")({
   head: () => ({
     meta: [
-      { title: "News — INUA VIJANA" },
-      { name: "description", content: "The latest news, press releases and updates from the INUA VIJANA network." },
+      { title: "News — Inua Youth Initiative" },
+      { name: "description", content: "The latest news, press releases and updates from the Inua Youth Initiative network." },
     ],
   }),
   component: News,
 });
 
 const articles = [
-  { image: sitePhotos.newsExpansion, tag: "Press Release", date: "Oct 15, 2026", title: "INUA VIJANA announces $12M expansion into West Africa" },
+  { image: sitePhotos.newsExpansion, tag: "Press Release", date: "Oct 15, 2026", title: "Inua Youth Initiative announces $12M expansion into West Africa" },
   { image: sitePhotos.newsHealth, tag: "Impact", date: "Sep 28, 2026", title: "Community Health Corps reaches 50,000 beneficiaries in initial rollout" },
   { image: sitePhotos.newsAssembly, tag: "Event", date: "Sep 10, 2026", title: "4,000 delegates convene at Africa Youth Assembly 2026" },
   { image: sitePhotos.newsPartnership, tag: "Partnership", date: "Aug 22, 2026", title: "Partnership with Mastercard Foundation for Digital Excellence Hubs" },
@@ -27,7 +27,7 @@ function News() {
       <PageHero
         eyebrow="News"
         title="What's new in the network."
-        description="Stories, announcements, and press releases from across INUA VIJANA."
+        description="Stories, announcements, and press releases from across Inua Youth Initiative."
       />
 
       <section className="py-24">

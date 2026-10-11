@@ -1,473 +1,121 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { ArrowRight, ArrowUpRight, Calendar, Heart, Users } from "lucide-react";
+import { ArrowRight, Users, Handshake, Megaphone, GraduationCap, Sprout, Lightbulb } from "lucide-react";
 import { sitePhotos } from "@/lib/unsplash-images";
 
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "INUA VIJANA — Youth Empowerment Network" },
+      { title: "Inua Youth Initiative — Youth Leadership & Empowerment in Kenya" },
       {
         name: "description",
         content:
-          "Empowering Africa's youth through leadership, digital skills, entrepreneurship, climate action, health, education and civic engagement.",
+          "Inua Youth Initiative is a Kenyan youth organisation building leadership, mentorship, civic awareness, skills and community participation among young people.",
       },
     ],
   }),
   component: Home,
 });
 
-const stats = [
-  { value: "45k+", label: "Youth Empowered" },
-  { value: "12", label: "Partner Countries" },
-  { value: "$8.4M", label: "Grant Funding" },
-  { value: "280+", label: "Corporate Partners" },
-];
-
-const programs = [
-  {
-    tag: "Technology",
-    title: "Digital Excellence Hubs",
-    desc: "Advanced cloud computing, AI and software engineering training for graduates across the region.",
-    image: sitePhotos.programsTechnology,
-  },
-  {
-    tag: "Governance",
-    title: "Civic Leadership Academy",
-    desc: "Preparing the next generation of public servants with ethical governance and policy frameworks.",
-    image: sitePhotos.programsLeadership,
-  },
-  {
-    tag: "Sustainability",
-    title: "Green Venture Fund",
-    desc: "Seed funding and technical support for youth-led climate adaptation and clean energy startups.",
-    image: sitePhotos.programsClimate,
-  },
-  {
-    tag: "Entrepreneurship",
-    title: "Founders Accelerator",
-    desc: "Mentorship, capital and networks for early-stage youth-led businesses across East Africa.",
-    image: sitePhotos.programsEntrepreneurship,
-  },
-  {
-    tag: "Education",
-    title: "Scholars Programme",
-    desc: "Full scholarships and academic mentorship for underserved secondary and tertiary students.",
-    image: sitePhotos.programsEducation,
-  },
-  {
-    tag: "Health",
-    title: "Community Health Corps",
-    desc: "Training young community health workers to deliver preventative care in rural districts.",
-    image: sitePhotos.programsHealth,
-  },
+const pillars = [
+  { icon: Users, title: "Youth Leadership", desc: "Helping young Kenyans grow the confidence and skills to lead in their schools, wards and communities.", image: sitePhotos.programsLeadership },
+  { icon: GraduationCap, title: "Mentorship", desc: "Connecting young people with mentors who listen, guide and open doors.", image: sitePhotos.programsEducation },
+  { icon: Megaphone, title: "Civic Awareness", desc: "Encouraging young people to understand their rights, responsibilities and voice in public life.", image: sitePhotos.impactCivic },
+  { icon: Lightbulb, title: "Skills Development", desc: "Practical learning — digital, life and work-readiness skills — for real opportunities.", image: sitePhotos.programsTechnology },
+  { icon: Sprout, title: "Community Participation", desc: "Young people taking part in clean-ups, tree planting and local action that changes neighbourhoods.", image: sitePhotos.programsClimate },
+  { icon: Handshake, title: "Opportunities", desc: "Sharing trainings, programmes and openings that help young people move forward.", image: sitePhotos.impactEntrepreneurship },
 ];
 
 function Home() {
   return (
     <>
-      {/* Hero */}
-      <section className="relative h-[92vh] min-h-[640px] flex items-center overflow-hidden">
-        <div className="absolute inset-0 z-0">
-          <img
-            src={sitePhotos.hero}
-            alt="Young African professionals collaborating in a modern workspace"
-            className="w-full h-full object-cover animate-slow-zoom"
-            width={1920}
-            height={1080}
-          />
-          <div className="absolute inset-0 bg-gradient-to-r from-brand-navy/90 via-brand-navy/60 to-brand-navy/20" />
+      <section className="relative h-[88vh] min-h-[600px] flex items-center overflow-hidden">
+        <div className="absolute inset-0">
+          <img src={sitePhotos.hero} alt="Young Kenyans in a group discussion during a youth leadership workshop" className="w-full h-full object-cover animate-slow-zoom" width={1600} height={1008} />
+          <div className="absolute inset-0 bg-gradient-to-r from-brand-navy/90 via-brand-navy/65 to-brand-navy/20" />
         </div>
-
-        <div className="container-page relative z-10 w-full">
+        <div className="container-page relative z-10">
           <div className="max-w-3xl animate-reveal">
-            <span className="inline-block px-4 py-1.5 bg-brand-yellow/20 text-brand-yellow text-[11px] font-extrabold uppercase tracking-[0.2em] rounded-full mb-6 backdrop-blur-sm">
-              Empowering African Youth
+            <span className="inline-block px-4 py-1.5 bg-brand-yellow/20 text-brand-yellow text-[11px] font-extrabold uppercase tracking-[0.2em] rounded-full mb-6">
+              Inua Youth Initiative · Kenya
             </span>
-            <h1 className="text-5xl md:text-7xl lg:text-8xl font-extrabold text-white leading-[1.02] tracking-tight text-balance">
-              Leadership <br />
-              <span className="text-brand-yellow">Redefined.</span>
+            <h1 className="text-5xl md:text-7xl font-extrabold text-white leading-[1.03] tracking-tight text-balance">
+              Lifting young Kenyans to <span className="text-brand-yellow">lead.</span>
             </h1>
-            <p className="mt-8 text-lg md:text-xl text-white/90 leading-relaxed max-w-xl text-pretty">
-              We connect young leaders with the resources, mentorship, and global
-              networks required to drive sustainable development across the continent.
+            <p className="mt-8 text-lg md:text-xl text-white/90 leading-relaxed max-w-xl">
+              Inua means "lift up." We support young people with leadership, mentorship,
+              civic awareness and skills — so they can shape their own futures and their communities.
             </p>
             <div className="mt-10 flex flex-wrap gap-4">
-              <Link
-                to="/programs"
-                className="px-8 py-4 bg-white text-brand-navy font-bold rounded-full hover:bg-brand-yellow transition-all hover:-translate-y-0.5"
-              >
-                Explore Our Programs
-              </Link>
-              <Link
-                to="/about/reports"
-                className="px-8 py-4 bg-white/10 backdrop-blur-md border border-white/25 text-white font-bold rounded-full hover:bg-white/20 transition-all"
-              >
-                Read Annual Report
-              </Link>
+              <Link to="/join" className="px-8 py-4 bg-white text-brand-navy font-bold rounded-full hover:bg-brand-yellow transition-all">Join the Initiative</Link>
+              <Link to="/programs" className="px-8 py-4 bg-white/10 border border-white/25 text-white font-bold rounded-full hover:bg-white/20 transition-all">What We Do</Link>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Stats Bar */}
-      <section className="py-16 bg-brand-surface border-b border-brand-navy/5">
-        <div className="container-page">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-10">
-            {stats.map((s) => (
-              <div key={s.label}>
-                <div className="text-5xl md:text-6xl font-extrabold text-brand-green tracking-tight">
-                  {s.value}
-                </div>
-                <div className="text-[11px] uppercase tracking-widest text-brand-navy/70 font-bold mt-2">
-                  {s.label}
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* About Preview */}
-      <section className="py-32">
+      <section className="py-28">
         <div className="container-page grid lg:grid-cols-12 gap-16 items-center">
           <div className="lg:col-span-6">
-            <span className="text-[11px] font-extrabold uppercase tracking-[0.2em] text-brand-green">
-              Our Mission
-            </span>
+            <span className="text-[11px] font-extrabold uppercase tracking-[0.2em] text-brand-green">Who we are</span>
             <h2 className="mt-6 text-4xl md:text-5xl font-extrabold tracking-tight leading-tight text-balance">
-              Bridging the gap between potential and opportunity.
+              A Kenyan youth initiative built on participation and positive change.
             </h2>
             <p className="mt-8 text-lg text-brand-navy/80 leading-relaxed">
-              INUA VIJANA is more than an organization; it is a movement dedicated
-              to unlocking the inherent creativity and leadership of African youth.
-              Through systematic intervention and community-led projects, we
-              transform passion into professional excellence.
+              We believe young people are not only the leaders of tomorrow — they are
+              contributors today. Inua Youth Initiative creates spaces where young Kenyans learn,
+              connect with mentors, take part in community action and discover opportunities.
             </p>
-            <Link
-              to="/about"
-              className="mt-8 inline-flex items-center gap-2 font-bold text-brand-green border-b-2 border-brand-green/20 hover:border-brand-green pb-1 transition-colors"
-            >
-              Learn more about our launch story
-              <ArrowRight className="h-4 w-4" />
+            <Link to="/about" className="mt-8 inline-flex items-center gap-2 font-bold text-brand-green border-b-2 border-brand-green/20 hover:border-brand-green pb-1">
+              About the Initiative <ArrowRight className="h-4 w-4" />
             </Link>
           </div>
           <div className="lg:col-span-6">
-            <div className="relative aspect-[4/5] rounded-3xl overflow-hidden">
-              <img
-                src={sitePhotos.homeMission}
-                alt="Young African leader"
-                loading="lazy"
-                className="w-full h-full object-cover"
-              />
-              <div className="absolute -bottom-6 -left-6 h-24 w-24 rounded-2xl bg-brand-yellow -z-10" />
+            <div className="rounded-3xl overflow-hidden aspect-[4/3]">
+              <img src={sitePhotos.homeMission} alt="A young mentor speaking with secondary school students" loading="lazy" className="w-full h-full object-cover" />
             </div>
           </div>
         </div>
       </section>
 
-      {/* Programs Grid */}
-      <section className="py-32 bg-brand-surface">
+      <section className="py-28 bg-brand-surface">
         <div className="container-page">
-          <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
-            <div className="max-w-xl">
-              <span className="text-[11px] font-extrabold uppercase tracking-[0.2em] text-brand-green">
-                Featured Programs
-              </span>
-              <h2 className="mt-4 text-4xl md:text-5xl font-extrabold tracking-tight">
-                Pillars of Impact
-              </h2>
-              <p className="mt-4 text-brand-navy/60 leading-relaxed">
-                Our multi-disciplinary approach targets the most critical barriers
-                to youth success in the 21st-century global economy.
-              </p>
-            </div>
-            <Link
-              to="/programs"
-              className="text-brand-green font-bold border-b-2 border-brand-green/20 hover:border-brand-green pb-1 transition-colors self-start"
-            >
-              View all initiatives →
-            </Link>
+          <div className="max-w-2xl mb-16">
+            <span className="text-[11px] font-extrabold uppercase tracking-[0.2em] text-brand-green">Our focus</span>
+            <h2 className="mt-4 text-4xl md:text-5xl font-extrabold tracking-tight">What we work on</h2>
           </div>
-
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {programs.map((p) => (
-              <Link
-                key={p.title}
-                to="/programs"
-                className="group cursor-pointer"
-              >
-                <div className="overflow-hidden rounded-2xl mb-6 aspect-[4/5] bg-brand-navy/5">
-                  <img
-                    src={p.image}
-                    alt={p.title}
-                    loading="lazy"
-                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                  />
+            {pillars.map((p) => (
+              <div key={p.title} className="bg-white rounded-3xl overflow-hidden border border-brand-navy/5">
+                <img src={p.image} alt="" loading="lazy" className="w-full aspect-[16/10] object-cover" />
+                <div className="p-8">
+                  <p.icon className="h-6 w-6 text-brand-green mb-4" />
+                  <h3 className="text-xl font-bold">{p.title}</h3>
+                  <p className="mt-3 text-sm text-brand-navy/65 leading-relaxed">{p.desc}</p>
                 </div>
-                <div className="flex items-center gap-3 mb-3">
-                  <span className="w-8 h-[2px] bg-brand-yellow" />
-                  <span className="text-[10px] font-extrabold uppercase tracking-widest text-brand-navy/40">
-                    {p.tag}
-                  </span>
-                </div>
-                <h3 className="text-2xl font-bold group-hover:text-brand-green transition-colors">
-                  {p.title}
-                </h3>
-                <p className="mt-3 text-brand-navy/60 text-sm leading-relaxed">
-                  {p.desc}
-                </p>
-              </Link>
+              </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Impact Story */}
-      <section className="py-32">
-        <div className="container-page">
-          <div className="grid lg:grid-cols-12 gap-12">
-            <div className="lg:col-span-8">
-              <div className="relative group overflow-hidden rounded-3xl">
-                <img
-                  src={sitePhotos.impactFeature}
-                  alt="Graduation ceremony"
-                  loading="lazy"
-                  className="w-full aspect-[4/3] object-cover transition-transform duration-1000 group-hover:scale-105"
-                />
-                <div className="absolute inset-x-0 bottom-0 p-10 md:p-14 bg-gradient-to-t from-brand-navy via-brand-navy/70 to-transparent text-white">
-                  <span className="text-brand-yellow font-extrabold uppercase text-[11px] tracking-[0.2em]">
-                    Featured Story
-                  </span>
-                  <h3 className="text-3xl md:text-4xl font-extrabold mt-4 mb-4 max-w-2xl leading-tight">
-                    How the Class of 2026 built Kenya's fastest-growing fintech
-                    for the unbanked.
-                  </h3>
-                  <Link
-                    to="/impact"
-                    className="inline-flex items-center gap-2 text-sm font-bold border-b border-white/40 pb-1 hover:border-brand-yellow hover:text-brand-yellow transition-colors"
-                  >
-                    Read the full profile <ArrowUpRight className="h-4 w-4" />
-                  </Link>
-                </div>
-              </div>
-            </div>
-            <div className="lg:col-span-4 flex flex-col gap-8">
-              <Link to="/impact" className="group">
-                <div className="overflow-hidden rounded-2xl aspect-video mb-4">
-                  <img
-                    src={sitePhotos.impactCivic}
-                    alt="Community workshop"
-                    loading="lazy"
-                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                  />
-                </div>
-                <h4 className="text-xl font-bold group-hover:text-brand-green transition-colors">
-                  Empowering the Rift Valley
-                </h4>
-                <p className="mt-2 text-sm text-brand-navy/60">
-                  A look into our local community development program in rural
-                  districts.
-                </p>
-              </Link>
-              <Link to="/impact" className="group">
-                <div className="overflow-hidden rounded-2xl aspect-video mb-4">
-                  <img
-                    src={sitePhotos.eventsConference}
-                    alt="Annual conference"
-                    loading="lazy"
-                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                  />
-                </div>
-                <h4 className="text-xl font-bold group-hover:text-brand-green transition-colors">
-                  Africa Youth Assembly 2026
-                </h4>
-                <p className="mt-2 text-sm text-brand-navy/60">
-                  4,000 delegates. 12 countries. One vision for the continent's
-                  future.
-                </p>
-              </Link>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Events */}
-      <section className="py-32 bg-brand-surface">
-        <div className="container-page">
-          <div className="flex items-end justify-between mb-16 flex-wrap gap-6">
-            <div>
-              <span className="text-[11px] font-extrabold uppercase tracking-[0.2em] text-brand-green">
-                What's Next
-              </span>
-              <h2 className="mt-4 text-4xl md:text-5xl font-extrabold tracking-tight">
-                Upcoming events
-              </h2>
-            </div>
-            <Link
-              to="/events"
-              className="text-brand-green font-bold border-b-2 border-brand-green/20 hover:border-brand-green pb-1"
-            >
-              All events →
-            </Link>
-          </div>
-
-          <div className="grid md:grid-cols-3 gap-8">
-            {[
-              {
-                date: "MAR 12",
-                title: "Africa Youth Innovation Summit",
-                loc: "Nairobi · Kenya",
-              },
-              {
-                date: "APR 04",
-                title: "Green Ventures Pitch Day",
-                loc: "Kigali · Rwanda",
-              },
-              {
-                date: "MAY 22",
-                title: "Digital Skills Bootcamp",
-                loc: "Kampala · Uganda",
-              },
-            ].map((e) => (
-              <Link
-                key={e.title}
-                to="/events"
-                className="group bg-white p-8 rounded-2xl border border-brand-navy/5 hover:border-brand-green/30 hover:-translate-y-1 transition-all"
-              >
-                <div className="flex items-center gap-3 text-brand-green font-extrabold text-sm mb-6">
-                  <Calendar className="h-4 w-4" />
-                  <span className="uppercase tracking-widest">{e.date} · 2026</span>
-                </div>
-                <h3 className="text-xl font-bold leading-snug group-hover:text-brand-green transition-colors">
-                  {e.title}
-                </h3>
-                <p className="mt-3 text-sm text-brand-navy/50 uppercase tracking-widest font-semibold">
-                  {e.loc}
-                </p>
-              </Link>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Partners Row */}
-      <section className="py-16 border-y border-brand-navy/5">
-        <div className="container-page">
-          <p className="text-center text-[11px] font-extrabold uppercase tracking-[0.2em] text-brand-navy/40 mb-10">
-            Trusted by leading institutions
-          </p>
-          <div className="flex flex-wrap justify-center items-center gap-x-16 gap-y-6 opacity-60">
-            {["UNICEF", "USAID", "Mastercard Foundation", "World Vision", "Ford Foundation", "UNDP"].map(
-              (name) => (
-                <span
-                  key={name}
-                  className="text-xl md:text-2xl font-extrabold tracking-tight text-brand-navy/50"
-                >
-                  {name}
-                </span>
-              )
-            )}
-          </div>
-        </div>
-      </section>
-
-      {/* CTA */}
-      <section className="py-32 bg-brand-navy text-white overflow-hidden relative">
-        <div className="absolute -top-32 -left-32 h-96 w-96 rounded-full bg-brand-green/30 blur-3xl" aria-hidden />
-        <div className="absolute -bottom-32 -right-32 h-96 w-96 rounded-full bg-brand-blue/20 blur-3xl" aria-hidden />
-        <div className="container-page relative">
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
-            <div>
-              <h2 className="text-4xl md:text-6xl font-extrabold tracking-tight leading-[1.05]">
-                Ready to shape the{" "}
-                <span className="text-brand-yellow">future?</span>
-              </h2>
-              <p className="mt-8 text-xl text-white/60 leading-relaxed max-w-lg">
-                Whether you are a donor, a partner, or a young person ready to lead,
-                there is a place for you in our network.
-              </p>
-              <div className="mt-12 grid sm:grid-cols-2 gap-4">
-                <Link
-                  to="/partners"
-                  className="p-8 bg-white/5 rounded-2xl border border-white/10 hover:bg-white/10 hover:-translate-y-1 transition-all group"
-                >
-                  <Heart className="h-5 w-5 text-brand-yellow mb-4" />
-                  <div className="text-brand-yellow font-extrabold mb-2">For Partners</div>
-                  <p className="text-sm text-white/50 mb-4">
-                    Join our ecosystem of 280+ international organizations.
-                  </p>
-                  <span className="text-sm font-bold inline-flex items-center gap-1 group-hover:translate-x-1 transition-transform">
-                    Collaborate with us <ArrowRight className="h-4 w-4" />
-                  </span>
-                </Link>
-                <Link
-                  to="/join"
-                  className="p-8 bg-white/5 rounded-2xl border border-white/10 hover:bg-white/10 hover:-translate-y-1 transition-all group"
-                >
-                  <Users className="h-5 w-5 text-brand-green-light mb-4" />
-                  <div className="text-brand-green-light font-extrabold mb-2">For Youth</div>
-                  <p className="text-sm text-white/50 mb-4">
-                    Apply for fellowships, grants, and training opportunities.
-                  </p>
-                  <span className="text-sm font-bold inline-flex items-center gap-1 group-hover:translate-x-1 transition-transform">
-                    Join the network <ArrowRight className="h-4 w-4" />
-                  </span>
-                </Link>
-              </div>
-            </div>
-            <div className="relative">
-              <div className="absolute -inset-6 bg-brand-green/20 blur-3xl rounded-full" aria-hidden />
-              <div className="relative rounded-3xl overflow-hidden border border-white/10">
-                <img
-                  src={sitePhotos.homeTestimonial}
-                  alt="Testimonial portrait"
-                  loading="lazy"
-                  className="w-full aspect-square object-cover"
-                />
-                <div className="absolute inset-x-0 bottom-0 p-10 bg-gradient-to-t from-brand-navy via-brand-navy/80 to-transparent">
-                  <p className="italic text-lg text-white/90 mb-4 leading-relaxed">
-                    "INUA VIJANA didn't just give me a grant — they gave me a global
-                    perspective on how to scale my impact."
-                  </p>
-                  <div className="font-extrabold">Amina Okoro</div>
-                  <div className="text-xs text-white/50 uppercase tracking-widest font-semibold">
-                    Founder, AgriConnect · 2026 Fellow
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Newsletter */}
-      <section className="py-24">
-        <div className="container-page">
-          <div className="max-w-3xl mx-auto text-center">
-            <h2 className="text-4xl md:text-5xl font-extrabold tracking-tight">
-              Stay in the loop
+      <section className="py-28 bg-brand-navy text-white">
+        <div className="container-page grid lg:grid-cols-2 gap-16 items-center">
+          <div>
+            <h2 className="text-4xl md:text-6xl font-extrabold tracking-tight leading-[1.05]">
+              There is a place for <span className="text-brand-yellow">you.</span>
             </h2>
-            <p className="mt-4 text-brand-navy/60">
-              Monthly updates on our programs, impact stories, and youth
-              opportunities. No spam, ever.
+            <p className="mt-8 text-xl text-white/70 max-w-lg">
+              Whether you are a young person ready to grow, a mentor, a volunteer or an
+              organisation that shares our values — let's work together.
             </p>
-            <form
-              className="mt-8 flex flex-col sm:flex-row gap-3 max-w-lg mx-auto"
-              onSubmit={(e) => e.preventDefault()}
-            >
-              <input
-                type="email"
-                required
-                placeholder="your@email.com"
-                className="flex-1 px-5 py-4 rounded-full border border-brand-navy/10 bg-white focus:outline-none focus:ring-2 focus:ring-brand-green/30 focus:border-brand-green"
-              />
-              <button
-                type="submit"
-                className="px-8 py-4 bg-brand-navy text-white rounded-full font-bold uppercase tracking-wider text-sm hover:bg-brand-green transition-colors"
-              >
-                Subscribe
-              </button>
-            </form>
+            <div className="mt-10 flex flex-wrap gap-4">
+              <Link to="/volunteer" className="px-8 py-4 bg-brand-yellow text-brand-navy font-bold rounded-full">Volunteer</Link>
+              <Link to="/partners" className="px-8 py-4 border border-white/25 font-bold rounded-full hover:bg-white/10">Partner with us</Link>
+              <Link to="/contact" className="px-8 py-4 border border-white/25 font-bold rounded-full hover:bg-white/10">Contact us</Link>
+            </div>
+          </div>
+          <div className="rounded-3xl overflow-hidden">
+            <img src={sitePhotos.aboutStory} alt="Young volunteers planting trees during a community clean-up" loading="lazy" className="w-full aspect-[4/3] object-cover" />
           </div>
         </div>
       </section>

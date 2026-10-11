@@ -5,8 +5,8 @@ import { useState } from "react";
 export const Route = createFileRoute("/join")({
   head: () => ({
     meta: [
-      { title: "Join the Network — INUA VIJANA" },
-      { name: "description", content: "Register as a youth member, partner organization or corporate sponsor to join the INUA VIJANA network." },
+      { title: "Join the Network — Inua Youth Initiative" },
+      { name: "description", content: "Register as a youth member, partner organization or corporate sponsor to join the Inua Youth Initiative network." },
     ],
   }),
   component: Join,

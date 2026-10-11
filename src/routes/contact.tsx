@@ -6,8 +6,8 @@ import { Mail, MapPin, Phone } from "lucide-react";
 export const Route = createFileRoute("/contact")({
   head: () => ({
     meta: [
-      { title: "Contact — INUA VIJANA" },
-      { name: "description", content: "Get in touch with INUA VIJANA's headquarters or regional offices." },
+      { title: "Contact — Inua Youth Initiative" },
+      { name: "description", content: "Get in touch with Inua Youth Initiative's headquarters or regional offices." },
     ],
   }),
   component: Contact,
@@ -66,16 +66,15 @@ function Contact() {
       <PageHero
         eyebrow="Contact"
         title="Let's talk."
-        description="Reach our headquarters or one of our regional offices — we typically respond within two business days."
+        description="Questions, ideas, partnership interest or want to get involved? Send us a message."
       />
 
       <section className="py-24">
         <div className="container-page grid lg:grid-cols-12 gap-12">
           <div className="lg:col-span-5 space-y-8">
             {[
-              { icon: MapPin, title: "Headquarters", body: "Riverside Drive, Nairobi 00100, Kenya" },
-              { icon: Phone, title: "Phone", body: "+254 (0) 20 000 0000" },
-              { icon: Mail, title: "Email", body: "hello@inuavijana.org" },
+              { icon: MapPin, title: "Location", body: "Kenya" },
+              { icon: Mail, title: "Message us", body: "Use the form and we will get back to you." },
             ].map(({ icon: Icon, title, body }) => (
               <div key={title} className="flex gap-5">
                 <div className="size-12 shrink-0 grid place-items-center rounded-full bg-brand-green/10 text-brand-green">
@@ -87,15 +86,10 @@ function Contact() {
                 </div>
               </div>
             ))}
-
-            <div className="pt-8 border-t border-brand-navy/5">
-              <h3 className="text-xs uppercase tracking-widest font-bold text-brand-navy/40 mb-4">Regional offices</h3>
-              <div className="grid grid-cols-2 gap-4">
-                {["Kampala", "Kigali", "Dar es Salaam", "Accra", "Lagos", "Addis Ababa"].map((c) => (
-                  <div key={c} className="p-4 rounded-xl bg-brand-surface font-bold text-sm">{c}</div>
-                ))}
-              </div>
-            </div>
+            <a href="https://www.facebook.com/share/p/17TxKcGZ4H/" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 font-bold text-brand-green">
+              <Phone className="h-4 w-4" /> Follow us on Facebook
+            </a>
+          </div>
           </div>
 
           <form onSubmit={handleSubmit} className="lg:col-span-7 p-8 md:p-10 rounded-3xl bg-brand-surface space-y-5">

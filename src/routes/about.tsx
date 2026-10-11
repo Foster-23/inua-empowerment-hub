@@ -5,15 +5,15 @@ import { sitePhotos } from "@/lib/unsplash-images";
 export const Route = createFileRoute("/about")({
   head: () => ({
     meta: [
-      { title: "About Us — INUA VIJANA" },
-      { name: "description", content: "Who we are and what makes INUA VIJANA different." },
+      { title: "About Us — Inua Youth Initiative" },
+      { name: "description", content: "Who we are and what makes Inua Youth Initiative different." },
     ],
   }),
   component: About,
 });
 
 const timeline = [
-  { year: "June 2026", title: "INUA VIJANA Network Launched", desc: "A pan-African network dedicated to empowering youth across 12 countries." },
+  { year: "June 2026", title: "Inua Youth Initiative Launched", desc: "A pan-African network dedicated to empowering youth across 12 countries." },
   { year: "Jul 2026", title: "First Digital Excellence Hubs", desc: "Digital literacy training reaches 5,000 students across Kenya." },
   { year: "Aug 2026", title: "Regional offices launched", desc: "Operations begin in Kampala, Kigali, Accra and Dar es Salaam." },
   { year: "Sep 2026", title: "Green Venture Fund launched", desc: "Initial capital deployed to 40 youth-led climate startups." },
@@ -33,7 +33,7 @@ function About() {
       <PageHero
         eyebrow="About Us"
         title="A network built by youth, for youth."
-        description="Launched in June 2026, INUA VIJANA is a Pan-African network dedicated to empowering youth across 12 countries. Our story is one of rapid momentum, ambition, and community impact."
+        description="Launched in June 2026, Inua Youth Initiative is a Pan-African network dedicated to empowering youth across 12 countries. Our story is one of rapid momentum, ambition, and community impact."
       />
 
       <section className="py-24">
@@ -44,7 +44,7 @@ function About() {
           <div className="lg:col-span-6">
             <h2 className="text-3xl md:text-4xl font-extrabold tracking-tight">Who we are</h2>
             <p className="mt-6 text-lg text-brand-navy/60 leading-relaxed">
-              INUA VIJANA (Swahili for "lift up the youth") is an independent non-profit registered in Kenya with regional offices across East and West Africa. We combine training, seed capital, mentorship and advocacy to remove the barriers young Africans face on the path to meaningful work and civic leadership.
+              Inua Youth Initiative (Swahili for "lift up the youth") is an independent non-profit registered in Kenya with regional offices across East and West Africa. We combine training, seed capital, mentorship and advocacy to remove the barriers young Africans face on the path to meaningful work and civic leadership.
             </p>
           </div>
         </div>

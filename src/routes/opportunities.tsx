@@ -4,8 +4,8 @@ import { PageHero } from "@/components/site/PageHero";
 export const Route = createFileRoute("/opportunities")({
   head: () => ({
     meta: [
-      { title: "Youth Opportunities — INUA VIJANA" },
-      { name: "description", content: "Scholarships, fellowships, internships, jobs and innovation challenges from INUA VIJANA and partners." },
+      { title: "Youth Opportunities — Inua Youth Initiative" },
+      { name: "description", content: "Scholarships, fellowships, internships, jobs and innovation challenges from Inua Youth Initiative and partners." },
     ],
   }),
   component: Opportunities,
