@@ -6,8 +6,8 @@ import { sitePhotos } from "@/lib/unsplash-images";
 export const Route = createFileRoute("/projects")({
   head: () => ({
     meta: [
-      { title: "Projects — INUA VIJANA" },
-      { name: "description", content: "Explore active, completed and upcoming projects across the INUA VIJANA network." },
+      { title: "Projects — Inua Youth Initiative" },
+      { name: "description", content: "Explore active, completed and upcoming projects across the Inua Youth Initiative network." },
     ],
   }),
   component: Projects,

@@ -6,7 +6,7 @@ import { sitePhotos } from "@/lib/unsplash-images";
 export const Route = createFileRoute("/volunteer")({
   head: () => ({
     meta: [
-      { title: "Volunteer — INUA VIJANA" },
+      { title: "Volunteer — Inua Youth Initiative" },
       { name: "description", content: "Join our volunteer network as a mentor, trainer, event coordinator or ambassador." },
     ],
   }),
@@ -31,7 +31,7 @@ function Volunteer() {
                 { title: "Mentor", desc: "1-hour monthly sessions with a fellow or scholar." },
                 { title: "Trainer", desc: "Deliver technical training in your area of expertise." },
                 { title: "Event Coordinator", desc: "Help run summits, bootcamps and community gatherings." },
-                { title: "Ambassador", desc: "Represent INUA VIJANA in your city or workplace." },
+                { title: "Ambassador", desc: "Represent Inua Youth Initiative in your city or workplace." },
               ].map((v) => (
                 <div key={v.title} className="flex gap-4">
                   <div className="size-10 shrink-0 grid place-items-center rounded-full bg-brand-green/10 text-brand-green">

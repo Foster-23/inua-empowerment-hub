@@ -6,7 +6,7 @@ import { CreditCard, Heart } from "lucide-react";
 export const Route = createFileRoute("/donate")({
   head: () => ({
     meta: [
-      { title: "Donate — INUA VIJANA" },
+      { title: "Donate — Inua Youth Initiative" },
       { name: "description", content: "Support youth empowerment across Africa. Your donation is fully tracked and reported." },
     ],
   }),

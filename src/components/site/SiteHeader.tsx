@@ -9,7 +9,7 @@ const menus: MegaMenu[] = [
   {
     label: "About Us",
     items: [
-      { label: "About INUA VIJANA", to: "/about", description: "Who we are and why we exist" },
+      { label: "About Inua Youth Initiative", to: "/about", description: "Who we are and why we exist" },
       { label: "Vision, Mission & Values", to: "/about/vision", description: "What guides our work" },
       { label: "Our Team", to: "/about/leadership", description: "The people behind the Initiative" },
       { label: "Annual Reports", to: "/about/reports", description: "Financials and impact reports" },
@@ -66,7 +66,7 @@ export function SiteHeader() {
     >
       <div className="container-page h-20 flex items-center justify-between">
           <Link to="/" className="text-xl font-extrabold tracking-tight flex items-center gap-3">
-            <img src="/favicon.jpg" alt="INUA VIJANA logo" className="h-9 w-9 rounded-full object-cover" />
+            <img src="/favicon.jpg" alt="Inua Youth Initiative logo" className="h-9 w-9 rounded-full object-cover" />
             <span className="flex items-center gap-1.5">
               <span className="text-brand-green">INUA</span>
               <span className="text-brand-navy/70">YOUTH</span>

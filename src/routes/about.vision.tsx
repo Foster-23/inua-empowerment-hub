@@ -5,8 +5,8 @@ import { Compass, Eye, Sparkles, Target } from "lucide-react";
 export const Route = createFileRoute("/about/vision")({
   head: () => ({
     meta: [
-      { title: "Vision, Mission & Values — INUA VIJANA" },
-      { name: "description", content: "Our vision, mission and the values that guide INUA VIJANA's work." },
+      { title: "Vision, Mission & Values — Inua Youth Initiative" },
+      { name: "description", content: "Our vision, mission and the values that guide Inua Youth Initiative's work." },
     ],
   }),
   component: Vision,

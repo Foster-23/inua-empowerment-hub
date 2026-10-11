@@ -8,7 +8,7 @@ export function SiteFooter() {
         <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-12 mb-16">
           <div className="col-span-2">
             <Link to="/" className="text-xl font-extrabold tracking-tight flex items-center gap-3 mb-8">
-              <img src="/favicon.jpg" alt="INUA VIJANA logo" className="h-9 w-9 rounded-full object-cover" />
+              <img src="/favicon.jpg" alt="Inua Youth Initiative logo" className="h-9 w-9 rounded-full object-cover" />
               <span className="flex items-center gap-1.5">
                 <span className="text-brand-green">INUA</span>
                 <span className="text-brand-navy/70">YOUTH</span>
@@ -64,7 +64,7 @@ export function SiteFooter() {
         </div>
 
         <div className="pt-12 border-t border-brand-navy/10 flex flex-col md:flex-row justify-between items-center gap-6 text-[10px] uppercase tracking-widest text-brand-navy/40 font-semibold">
-          <p>© {new Date().getFullYear()} INUA VIJANA NETWORK. ALL RIGHTS RESERVED.</p>
+          <p>© {new Date().getFullYear()} INUA YOUTH INITIATIVE. ALL RIGHTS RESERVED.</p>
           <div className="flex gap-6">
             <a href="#" className="hover:text-brand-navy">Privacy Policy</a>
             <a href="#" className="hover:text-brand-navy">Terms</a>
