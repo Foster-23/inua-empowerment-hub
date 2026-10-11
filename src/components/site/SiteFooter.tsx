@@ -11,12 +11,12 @@ export function SiteFooter() {
               <img src="/favicon.jpg" alt="INUA VIJANA logo" className="h-9 w-9 rounded-full object-cover" />
               <span className="flex items-center gap-1.5">
                 <span className="text-brand-green">INUA</span>
-                <span className="text-brand-navy/70">VIJANA</span>
+                <span className="text-brand-navy/70">YOUTH</span>
               </span>
             </Link>
             <p className="text-brand-navy/60 text-sm max-w-sm leading-relaxed mb-8">
-              A youth empowerment network dedicated to unlocking the potential of
-              Africa's most valuable asset: its young people.
+              A Kenyan youth initiative for leadership, mentorship and opportunity for
+              young people across Kenya.
             </p>
             <div className="flex gap-3">
               {[Linkedin, Twitter, Instagram, Facebook].map((Icon, i) => (

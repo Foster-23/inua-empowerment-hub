@@ -4,58 +4,42 @@ import { PageHero } from "@/components/site/PageHero";
 export const Route = createFileRoute("/partners")({
   head: () => ({
     meta: [
-      { title: "Partners & Donors — INUA VIJANA" },
-      { name: "description", content: "The international institutions, corporates and universities partnering with INUA VIJANA." },
+      { title: "Partner With Us — Inua Youth Initiative" },
+      { name: "description", content: "Work with Inua Youth Initiative to support young people in Kenya through leadership, mentorship and skills." },
     ],
   }),
   component: Partners,
 });
 
-const partners = {
-  International: ["UNICEF", "UNDP", "USAID", "GIZ", "UN Women", "FCDO"],
-  Foundations: ["Mastercard Foundation", "Ford Foundation", "Rockefeller Foundation", "Open Society", "MacArthur", "Aga Khan"],
-  Corporate: ["Safaricom", "MTN Group", "Equity Group", "KCB", "Standard Bank", "Ecobank"],
-  Universities: ["Strathmore University", "University of Nairobi", "Makerere University", "University of Cape Town", "Ashesi University", "Kigali Institute"],
-};
+const ways = [
+  { title: "Schools & colleges", body: "Host mentorship sessions, leadership talks or civic awareness forums with your students." },
+  { title: "Community groups", body: "Co-organise clean-ups, tree planting and local youth activities." },
+  { title: "Organisations & businesses", body: "Offer trainings, mentors, internships or support for youth activities." },
+  { title: "Individuals", body: "Share your skills as a mentor or volunteer, or support our work." },
+];
 
 function Partners() {
   return (
     <>
       <PageHero
-        eyebrow="Partners & Donors"
-        title="Building the network, together."
-        description="280+ institutions across five continents partner with INUA VIJANA to build the next generation of African leaders."
+        eyebrow="Partner With Us"
+        title="Let's lift young people, together."
+        description="We welcome partners who share our commitment to young Kenyans. Partnerships are listed here only once they are confirmed."
       />
-
       <section className="py-24">
-        <div className="container-page space-y-16">
-          {Object.entries(partners).map(([cat, items]) => (
-            <div key={cat}>
-              <h2 className="text-xs uppercase tracking-[0.2em] font-extrabold text-brand-green mb-8">{cat}</h2>
-              <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
-                {items.map((name) => (
-                  <div key={name} className="aspect-video rounded-2xl bg-brand-surface border border-brand-navy/5 grid place-items-center hover:border-brand-green/30 transition-colors">
-                    <span className="font-extrabold text-brand-navy/60 text-center px-4 text-sm">{name}</span>
-                  </div>
-                ))}
-              </div>
+        <div className="container-page grid md:grid-cols-2 gap-6">
+          {ways.map((w) => (
+            <div key={w.title} className="p-8 rounded-3xl bg-brand-surface border border-brand-navy/5">
+              <h2 className="text-xl font-extrabold">{w.title}</h2>
+              <p className="mt-3 text-brand-navy/65">{w.body}</p>
             </div>
           ))}
         </div>
       </section>
-
       <section className="py-24 bg-brand-navy text-white">
-        <div className="container-page grid lg:grid-cols-2 gap-12 items-center">
-          <div>
-            <h2 className="text-4xl md:text-5xl font-extrabold tracking-tight leading-tight">Become a partner.</h2>
-            <p className="mt-6 text-white/60 text-lg leading-relaxed">
-              From co-designing programmes to sponsoring cohorts, there are many ways to partner. Our team will build the right engagement for you.
-            </p>
-          </div>
-          <div className="flex flex-wrap gap-4 lg:justify-end">
-            <Link to="/contact" className="px-8 py-4 rounded-full bg-brand-yellow text-brand-navy font-bold uppercase tracking-wider text-sm hover:brightness-110">Contact partnerships</Link>
-            <Link to="/about/reports" className="px-8 py-4 rounded-full border border-white/25 text-white font-bold uppercase tracking-wider text-sm hover:bg-white/10">Read our reports</Link>
-          </div>
+        <div className="container-page flex flex-col lg:flex-row gap-8 lg:items-center justify-between">
+          <h2 className="text-4xl md:text-5xl font-extrabold tracking-tight">Interested in partnering?</h2>
+          <Link to="/contact" className="px-8 py-4 rounded-full bg-brand-yellow text-brand-navy font-bold uppercase tracking-wider text-sm self-start">Get in touch</Link>
         </div>
       </section>
     </>
