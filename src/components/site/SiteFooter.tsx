@@ -1,5 +1,5 @@
 import { Link } from "@tanstack/react-router";
-import { Facebook, Instagram, Linkedin, Twitter } from "lucide-react";
+import { Facebook } from "lucide-react";
 
 export function SiteFooter() {
   return (
@@ -19,18 +19,7 @@ export function SiteFooter() {
               young people across Kenya.
             </p>
             <div className="flex gap-3">
-              {[Linkedin, Twitter, Instagram, Facebook].map((Icon, i) => (
-                <a
-                  key={i}
-                  href={Icon === Facebook ? "https://www.facebook.com/share/p/17TxKcGZ4H/" : "#"}
-                  target={Icon === Facebook ? "_blank" : undefined}
-                  rel={Icon === Facebook ? "noopener noreferrer" : undefined}
-                  aria-label="Social link"
-                  className="size-9 grid place-items-center rounded-full bg-white border border-brand-navy/5 text-brand-navy/60 hover:text-brand-green hover:border-brand-green/30 transition-all"
-                >
-                  <Icon className="h-4 w-4" />
-                </a>
-              ))}
+              <a href="https://www.facebook.com/share/p/17TxKcGZ4H/" target="_blank" rel="noopener noreferrer" aria-label="Inua Youth Initiative on Facebook" className="size-10 grid place-items-center rounded-full bg-background border border-border text-brand-green"><Facebook className="size-4" /></a>
             </div>
           </div>
 
@@ -55,21 +44,18 @@ export function SiteFooter() {
           <FooterCol
             title="Get Involved"
             links={[
-              { label: "Donate", to: "/donate" },
+              { label: "Support Our Work", to: "/donate" },
               { label: "Volunteer", to: "/volunteer" },
-              { label: "Join Network", to: "/join" },
+              { label: "Join the Initiative", to: "/join" },
               { label: "Contact", to: "/contact" },
             ]}
           />
         </div>
 
+        <p className="text-xs text-muted-foreground mb-6">Photography is illustrative and does not document Inua Youth Initiative activities.</p>
         <div className="pt-12 border-t border-brand-navy/10 flex flex-col md:flex-row justify-between items-center gap-6 text-[10px] uppercase tracking-widest text-brand-navy/40 font-semibold">
           <p>© {new Date().getFullYear()} INUA YOUTH INITIATIVE. ALL RIGHTS RESERVED.</p>
-          <div className="flex gap-6">
-            <a href="#" className="hover:text-brand-navy">Privacy Policy</a>
-            <a href="#" className="hover:text-brand-navy">Terms</a>
-            <a href="#" className="hover:text-brand-navy">Transparency</a>
-          </div>
+          <Link to="/about/reports" className="hover:text-brand-navy">Reports & accountability</Link>
         </div>
       </div>
     </footer>
