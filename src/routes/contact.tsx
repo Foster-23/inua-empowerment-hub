@@ -90,7 +90,6 @@ function Contact() {
               <Phone className="h-4 w-4" /> Follow us on Facebook
             </a>
           </div>
-          </div>
 
           <form onSubmit={handleSubmit} className="lg:col-span-7 p-8 md:p-10 rounded-3xl bg-brand-surface space-y-5">
             <h3 className="text-2xl font-extrabold">Send us a message</h3>

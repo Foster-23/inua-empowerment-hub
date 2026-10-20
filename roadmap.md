@@ -1,0 +1,4 @@
+- [x] Repair the Contact page rendering error.
+- [ ] Remove unsupported organizational claims and sample listings from remaining pages.
+- [ ] Keep navigation, calls to action and imagery consistent with a Kenyan youth initiative.
+- [ ] Verify page rendering, navigation and mobile layout; report unavailable submission/payment services honestly.
