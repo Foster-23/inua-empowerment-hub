@@ -1,5 +1,6 @@
 import { Link } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
+import { Button } from "@/components/ui/button";
 import { Menu, X, ChevronDown } from "lucide-react";
 
 type MenuItem = { label: string; to: string; description?: string };
@@ -12,16 +13,16 @@ const menus: MegaMenu[] = [
       { label: "About Inua Youth Initiative", to: "/about", description: "Who we are and why we exist" },
       { label: "Vision, Mission & Values", to: "/about/vision", description: "What guides our work" },
       { label: "Our Team", to: "/about/leadership", description: "The people behind the Initiative" },
-      { label: "Annual Reports", to: "/about/reports", description: "Financials and impact reports" },
+      { label: "Annual Reports", to: "/about/reports", description: "Published organizational reports" },
     ],
   },
   {
     label: "Programs",
     items: [
-      { label: "Our Programs", to: "/programs", description: "Flagship initiatives" },
-      { label: "Projects", to: "/projects", description: "Active field projects" },
+      { label: "Our Programs", to: "/programs", description: "Youth empowerment focus areas" },
+      { label: "Projects", to: "/projects", description: "Community action and updates" },
       { label: "Impact Stories", to: "/impact", description: "Stories of transformation" },
-      { label: "Youth Opportunities", to: "/opportunities", description: "Scholarships, fellowships, jobs" },
+      { label: "Youth Opportunities", to: "/opportunities", description: "Verified openings for young Kenyans" },
     ],
   },
   {
@@ -29,7 +30,7 @@ const menus: MegaMenu[] = [
     items: [
       { label: "Volunteer", to: "/volunteer", description: "Join our volunteer network" },
       { label: "Join the Network", to: "/join", description: "Become part of the Initiative" },
-      { label: "Donate", to: "/donate", description: "Support our mission" },
+      { label: "Support Our Work", to: "/donate", description: "Support our mission" },
       { label: "Events", to: "/events", description: "Upcoming and past events" },
     ],
   },
@@ -59,8 +60,8 @@ export function SiteHeader() {
     <header
       className={`sticky top-0 z-50 w-full transition-all duration-300 ${
         scrolled
-          ? "bg-white/90 backdrop-blur-md border-b border-brand-navy/5 shadow-sm"
-          : "bg-white/70 backdrop-blur-sm border-b border-transparent"
+          ? "bg-background/90 backdrop-blur-md border-b border-brand-navy/5 shadow-sm"
+          : "bg-background/70 backdrop-blur-sm border-b border-transparent"
       }`}
       onMouseLeave={() => setOpen(null)}
     >
@@ -73,7 +74,7 @@ export function SiteHeader() {
             </span>
           </Link>
 
-          <div className="hidden lg:flex items-center gap-2 ml-auto">
+          <div className="hidden xl:flex items-center gap-2 ml-auto">
             <nav className="flex items-center gap-2">
               <Link
                 to="/"
@@ -87,13 +88,14 @@ export function SiteHeader() {
                   className="relative"
                   onMouseEnter={() => setOpen(menu.label)}
                 >
-                  <button
+                  <Button variant="ghost"
                     className="flex items-center gap-1 px-3 py-2 text-[13px] font-semibold uppercase tracking-widest text-brand-navy/70 hover:text-brand-green transition-colors"
+                    onClick={() => setOpen(open === menu.label ? null : menu.label)}
                     aria-expanded={open === menu.label}
                   >
                     {menu.label}
                     <ChevronDown className="h-3 w-3" />
-                  </button>
+                  </Button>
                 </div>
               ))}
               <Link
@@ -112,26 +114,26 @@ export function SiteHeader() {
 
             <Link
               to="/donate"
-              className="px-6 py-2.5 bg-brand-green text-white text-[13px] font-bold uppercase tracking-wider rounded-full shadow-lg shadow-brand-green/20 hover:brightness-110 hover:-translate-y-0.5 transition-all"
+              className="px-6 py-2.5 bg-brand-green text-primary-foreground text-[13px] font-bold uppercase tracking-wider rounded-full shadow-lg shadow-brand-green/20 hover:brightness-110 hover:-translate-y-0.5 transition-all"
             >
-              Donate
+              Support Us
             </Link>
           </div>
 
-          <button
-            className="lg:hidden p-2 -mr-2"
+          <Button variant="ghost"
+            className="xl:hidden p-2 -mr-2"
             onClick={() => setMobileOpen((v) => !v)}
             aria-label="Toggle menu"
             aria-expanded={mobileOpen}
           >
             {mobileOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
-          </button>
+          </Button>
       </div>
 
       {/* Mega menu panel */}
       {open && (
         <div
-          className="hidden lg:block absolute inset-x-0 top-full bg-white border-b border-brand-navy/5 shadow-xl animate-in fade-in slide-in-from-top-2 duration-200"
+          className="hidden xl:block absolute inset-x-0 top-full bg-background border-b border-brand-navy/5 shadow-xl animate-in fade-in slide-in-from-top-2 duration-200"
           onMouseEnter={() => setOpen(open)}
         >
           <div className="container-page py-10">
@@ -162,7 +164,7 @@ export function SiteHeader() {
 
       {/* Mobile menu */}
       {mobileOpen && (
-        <div className="lg:hidden border-t border-brand-navy/5 bg-white">
+        <div className="xl:hidden border-t border-brand-navy/5 bg-background">
           <div className="container-page py-6 space-y-6 max-h-[calc(100vh-5rem)] overflow-y-auto">
             <Link
               to="/"
@@ -207,10 +209,10 @@ export function SiteHeader() {
               </Link>
               <Link
                 to="/donate"
-                className="mt-2 px-6 py-3 bg-brand-green text-white text-sm font-bold uppercase tracking-wider rounded-full text-center"
+                className="mt-2 px-6 py-3 bg-brand-green text-primary-foreground text-sm font-bold uppercase tracking-wider rounded-full text-center"
                 onClick={() => setMobileOpen(false)}
               >
-                Donate
+                Support Us
               </Link>
             </div>
           </div>

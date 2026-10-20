@@ -1,7 +1,8 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
 import { PageHero } from "@/components/site/PageHero";
-import { Mail, MapPin, Phone } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { Mail, MapPin, Facebook } from "lucide-react";
 
 export const Route = createFileRoute("/contact")({
   head: () => ({
@@ -66,7 +67,7 @@ function Contact() {
       <PageHero
         eyebrow="Contact"
         title="Let's talk."
-        description="Questions, ideas, partnership interest or want to get involved? Send us a message."
+        description="Questions, ideas or partnership interest? Connect with Inua Youth Initiative."
       />
 
       <section className="py-24">
@@ -74,7 +75,7 @@ function Contact() {
           <div className="lg:col-span-5 space-y-8">
             {[
               { icon: MapPin, title: "Location", body: "Kenya" },
-              { icon: Mail, title: "Message us", body: "Use the form and we will get back to you." },
+              { icon: Mail, title: "Message us", body: "Connect through our Facebook page." },
             ].map(({ icon: Icon, title, body }) => (
               <div key={title} className="flex gap-5">
                 <div className="size-12 shrink-0 grid place-items-center rounded-full bg-brand-green/10 text-brand-green">
@@ -87,13 +88,14 @@ function Contact() {
               </div>
             ))}
             <a href="https://www.facebook.com/share/p/17TxKcGZ4H/" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 font-bold text-brand-green">
-              <Phone className="h-4 w-4" /> Follow us on Facebook
+              <Facebook className="h-4 w-4" /> Follow us on Facebook
             </a>
           </div>
-          </div>
 
-          <form onSubmit={handleSubmit} className="lg:col-span-7 p-8 md:p-10 rounded-3xl bg-brand-surface space-y-5">
-            <h3 className="text-2xl font-extrabold">Send us a message</h3>
+          <form onSubmit={handleSubmit} className="lg:col-span-7 p-8 md:p-10 rounded-lg bg-brand-surface space-y-5">
+            <h3 className="text-2xl font-extrabold">Message the Initiative</h3>
+            <p className="text-muted-foreground">The online contact form is not available yet. Please reach us through Facebook; this form does not collect or send your details.</p>
+            <fieldset disabled className="space-y-5 opacity-60">
             <div className="grid md:grid-cols-2 gap-4">
               <Field
                 label="First name"
@@ -118,21 +120,22 @@ function Contact() {
               onChange={(e) => setFormData({ ...formData, organization: e.target.value })}
             />
             <div>
-              <label className="text-xs uppercase tracking-widest font-bold text-brand-navy/60">Message</label>
+              <label htmlFor="contact-message" className="text-xs uppercase tracking-widest font-bold text-brand-navy/60">Message</label>
               <textarea
+                id="contact-message"
                 rows={6}
                 value={formData.message}
                 onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                className="mt-2 w-full px-5 py-3 rounded-xl border border-brand-navy/10 bg-white focus:outline-none focus:ring-2 focus:ring-brand-green/30"
+                className="mt-2 w-full px-5 py-3 rounded-xl border border-brand-navy/10 bg-background focus:outline-none focus:ring-2 focus:ring-brand-green/30"
               />
             </div>
-            <button
+            <Button
               type="submit"
-              disabled={loading}
-              className="w-full md:w-auto px-8 py-4 bg-brand-green text-white rounded-full font-bold uppercase tracking-wider text-sm hover:brightness-110 transition-all disabled:opacity-50 disabled:cursor-not-allowed"
+              disabled
+              className="w-full md:w-auto px-8 py-4 bg-brand-green text-primary-foreground rounded-full font-bold uppercase tracking-wider text-sm hover:brightness-110 transition-all disabled:opacity-50 disabled:cursor-not-allowed"
             >
-              {loading ? "Sending..." : "Send message"}
-            </button>
+              Online form unavailable
+            </Button>
             {statusMessage && (
               <div
                 className={`rounded-2xl px-4 py-3 text-sm ${
@@ -142,6 +145,7 @@ function Contact() {
                 {statusMessage}
               </div>
             )}
+            </fieldset>
           </form>
         </div>
       </section>
@@ -152,12 +156,13 @@ function Contact() {
 function Field({ label, type = "text", value, onChange }: { label: string; type?: string; value?: string; onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void }) {
   return (
     <div>
-      <label className="text-xs uppercase tracking-widest font-bold text-brand-navy/60">{label}</label>
+      <label htmlFor={`contact-${label.replaceAll(" ", "-")}`} className="text-xs uppercase tracking-widest font-bold text-brand-navy/60">{label}</label>
       <input
+        id={`contact-${label.replaceAll(" ", "-")}`}
         type={type}
         value={value || ""}
         onChange={onChange}
-        className="mt-2 w-full px-5 py-3 rounded-xl border border-brand-navy/10 bg-white focus:outline-none focus:ring-2 focus:ring-brand-green/30"
+        className="mt-2 w-full px-5 py-3 rounded-xl border border-brand-navy/10 bg-background focus:outline-none focus:ring-2 focus:ring-brand-green/30"
       />
     </div>
   );
