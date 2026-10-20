@@ -10,7 +10,10 @@ const router = getRouter();
 
 router.navigate({ to: window.location.pathname + window.location.search }).catch(() => undefined);
 
-ReactDOM.createRoot(document.getElementById("root")!).render(
+const root = document.getElementById("root");
+if (!root) throw new Error("Application root is missing");
+
+ReactDOM.createRoot(root).render(
   <React.StrictMode>
     <QueryClientProvider client={queryClient}>
       <RouterProvider router={router} />
