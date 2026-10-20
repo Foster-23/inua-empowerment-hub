@@ -1,4 +1,4 @@
-import { createFileRoute, Link, Outlet } from "@tanstack/react-router";
+import { createFileRoute, Link, Outlet, useRouterState } from "@tanstack/react-router";
 import { PageHero } from "@/components/site/PageHero";
 import { sitePhotos } from "@/lib/unsplash-images";
 
@@ -12,56 +12,34 @@ export const Route = createFileRoute("/about")({
   component: About,
 });
 
-const timeline = [
-  { year: "June 2026", title: "Inua Youth Initiative Launched", desc: "A pan-African network dedicated to empowering youth across 12 countries." },
-  { year: "Jul 2026", title: "First Digital Excellence Hubs", desc: "Digital literacy training reaches 5,000 students across Kenya." },
-  { year: "Aug 2026", title: "Regional offices launched", desc: "Operations begin in Kampala, Kigali, Accra and Dar es Salaam." },
-  { year: "Sep 2026", title: "Green Venture Fund launched", desc: "Initial capital deployed to 40 youth-led climate startups." },
-  { year: "Oct 2026", title: "Continental partnerships", desc: "Strategic partnerships signed with UNICEF, USAID and Mastercard Foundation." },
-];
-
 const values = [
   { title: "Youth first", desc: "We center the voices, ideas and leadership of young Africans in everything we do." },
-  { title: "Radical transparency", desc: "Public reporting, open financials and independently-audited outcomes." },
-  { title: "Local ownership", desc: "Programmes are designed with — not for — the communities they serve." },
-  { title: "Long-term impact", desc: "We measure success in careers built and communities changed, not events held." },
+  { title: "Radical transparency", desc: "We value honesty and clear communication about our work." },
+  { title: "Local ownership", desc: "We value the ideas and participation of the communities we work with." },
+  { title: "Long-term impact", desc: "We aim for meaningful learning and positive community change." },
 ];
 
 function About() {
+  const pathname = useRouterState({ select: (state) => state.location.pathname });
+  if (pathname !== "/about" && pathname !== "/about/") return <Outlet />;
   return (
     <>
       <PageHero
         eyebrow="About Us"
-        title="A network built by youth, for youth."
-        description="Launched in June 2026, Inua Youth Initiative is a Pan-African network dedicated to empowering youth across 12 countries. Our story is one of rapid momentum, ambition, and community impact."
+        title="Inua Youth Initiative."
+        description="A Kenyan youth organization focused on leadership, empowerment, mentorship, civic awareness, skills development and community participation."
       />
 
       <section className="py-24">
         <div className="container-page grid lg:grid-cols-12 gap-12 items-center">
           <div className="lg:col-span-6">
-            <img src={sitePhotos.aboutStory} alt="Community members learning and gathering together" loading="lazy" className="rounded-3xl w-full aspect-[4/3] object-cover" />
+            <img src={sitePhotos.aboutStory} alt="Community members learning and gathering together" loading="lazy" className="rounded-lg w-full aspect-[4/3] object-cover" />
           </div>
           <div className="lg:col-span-6">
             <h2 className="text-3xl md:text-4xl font-extrabold tracking-tight">Who we are</h2>
             <p className="mt-6 text-lg text-brand-navy/60 leading-relaxed">
-              Inua Youth Initiative (Swahili for "lift up the youth") is an independent non-profit registered in Kenya with regional offices across East and West Africa. We combine training, seed capital, mentorship and advocacy to remove the barriers young Africans face on the path to meaningful work and civic leadership.
+              Inua Youth Initiative works with and for young people in Kenya. Our focus is helping young people learn, connect, participate and contribute to positive change in their communities.
             </p>
-          </div>
-        </div>
-      </section>
-
-      <section className="py-24 bg-brand-surface">
-        <div className="container-page">
-          <h2 className="text-3xl md:text-4xl font-extrabold tracking-tight mb-16">Our journey</h2>
-          <div className="relative border-l-2 border-brand-green/20 pl-8 md:pl-12 space-y-12">
-            {timeline.map((t) => (
-              <div key={t.year} className="relative">
-                <div className="absolute -left-[42px] md:-left-[54px] top-1 size-4 rounded-full bg-brand-green ring-4 ring-brand-surface" />
-                <div className="text-xs font-extrabold uppercase tracking-[0.2em] text-brand-green">{t.year}</div>
-                <h3 className="mt-2 text-2xl font-bold">{t.title}</h3>
-                <p className="mt-2 text-brand-navy/60 max-w-2xl">{t.desc}</p>
-              </div>
-            ))}
           </div>
         </div>
       </section>
@@ -74,7 +52,7 @@ function About() {
           </div>
           <div className="grid md:grid-cols-2 gap-8">
             {values.map((v) => (
-              <div key={v.title} className="p-10 rounded-3xl border border-brand-navy/5 bg-white hover:border-brand-green/30 transition-colors">
+              <div key={v.title} className="p-10 rounded-lg border border-brand-navy/5 bg-background hover:border-brand-green/30 transition-colors">
                 <h3 className="text-2xl font-bold">{v.title}</h3>
                 <p className="mt-4 text-brand-navy/60 leading-relaxed">{v.desc}</p>
               </div>

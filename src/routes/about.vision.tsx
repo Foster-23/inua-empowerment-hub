@@ -18,18 +18,18 @@ function Vision() {
       <PageHero
         eyebrow="Vision, Mission & Values"
         title="What we're building, and why it matters."
-        description="A shared north star for a network spanning 12 countries and thousands of young leaders."
+        description="Leadership, opportunity and participation for young people in Kenya."
       />
 
       <section className="py-24">
         <div className="container-page grid md:grid-cols-2 gap-8">
           {[
-            { icon: Eye, title: "Our Vision", body: "An Africa where every young person has the skills, capital and networks to shape their own future — and the future of the continent." },
-            { icon: Target, title: "Our Mission", body: "To empower African youth through training, mentorship, seed funding and civic engagement, so they can lead sustainable development in their communities." },
-            { icon: Compass, title: "Our Approach", body: "We combine institutional partnerships with grassroots ownership — pairing world-class training with locally-designed programmes." },
-            { icon: Sparkles, title: "Our Promise", body: "Every programme is independently evaluated. Every dollar is publicly reported. Every graduate becomes part of a lifelong alumni network." },
+            { icon: Eye, title: "Our Vision", body: "A Kenya where young people have the confidence, skills and opportunities to shape their future and contribute to their communities." },
+            { icon: Target, title: "Our Mission", body: "To support young people in Kenya through leadership, mentorship, skills development, civic awareness and community participation." },
+            { icon: Compass, title: "Our Approach", body: "We value learning, connection and youth participation rooted in the Kenyan community context." },
+            { icon: Sparkles, title: "Our Values", body: "Inclusion, respect, honesty and the belief that young people have a meaningful contribution to make." },
           ].map(({ icon: Icon, title, body }) => (
-            <div key={title} className="p-10 rounded-3xl bg-brand-surface hover:bg-white hover:shadow-xl transition-all">
+            <div key={title} className="p-10 rounded-lg bg-brand-surface  transition-all">
               <Icon className="h-8 w-8 text-brand-green mb-6" />
               <h2 className="text-2xl font-extrabold">{title}</h2>
               <p className="mt-4 text-brand-navy/60 leading-relaxed">{body}</p>
@@ -38,15 +38,7 @@ function Vision() {
         </div>
       </section>
 
-      <section className="py-24 bg-brand-navy text-white">
-        <div className="container-page max-w-4xl">
-          <span className="text-[11px] font-extrabold uppercase tracking-[0.2em] text-brand-yellow">Our commitment</span>
-          <p className="mt-6 text-3xl md:text-4xl font-extrabold tracking-tight leading-tight text-balance">
-            "We measure success not by the number of workshops we run, but by the careers built, the businesses launched, and the communities changed."
-          </p>
-          <p className="mt-8 text-white/60 uppercase text-xs tracking-widest font-bold">— Our 2030 Strategic Plan</p>
-        </div>
-      </section>
+
     </>
   );
 }

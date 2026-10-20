@@ -1,4 +1,4 @@
-import { createFileRoute, Link } from "@tanstack/react-router";
+import { createFileRoute } from "@tanstack/react-router";
 import { PageHero } from "@/components/site/PageHero";
 import { sitePhotos } from "@/lib/unsplash-images";
 
@@ -6,21 +6,19 @@ export const Route = createFileRoute("/programs")({
   head: () => ({
     meta: [
       { title: "Our Programs — Inua Youth Initiative" },
-      { name: "description", content: "Explore Inua Youth Initiative's flagship programs across leadership, digital skills, entrepreneurship, climate action, education and health." },
+      { name: "description", content: "Youth leadership, mentorship, civic awareness, skills and community participation in Kenya." },
     ],
   }),
   component: Programs,
 });
 
 const items = [
-  { tag: "Leadership", title: "Civic Leadership Academy", desc: "A 12-month fellowship preparing young leaders for public service and civic engagement.", image: sitePhotos.programsLeadership },
-  { tag: "Digital Skills", title: "Digital Excellence Hubs", desc: "Cloud computing, AI and software engineering training with direct pipelines to employers.", image: sitePhotos.programsTechnology },
-  { tag: "Entrepreneurship", title: "Founders Accelerator", desc: "Seed capital, mentorship and go-to-market support for early-stage youth-led ventures.", image: sitePhotos.programsEntrepreneurship },
-  { tag: "Climate Action", title: "Green Venture Fund", desc: "Non-dilutive funding and technical assistance for clean energy and climate adaptation startups.", image: sitePhotos.programsClimate },
-  { tag: "Education", title: "Scholars Programme", desc: "Full scholarships, academic tutoring and life-skills mentorship for underserved students.", image: sitePhotos.programsEducation },
-  { tag: "Health", title: "Community Health Corps", desc: "Training and deploying young community health workers in underserved rural districts.", image: sitePhotos.programsHealth },
-  { tag: "Innovation", title: "Youth Innovation Challenge", desc: "An annual continental competition awarding grants to the boldest youth-led solutions.", image: sitePhotos.programsTechnologyAlt },
-  { tag: "Civic Engagement", title: "Voter Empowerment Initiative", desc: "Non-partisan civic education equipping first-time voters to shape their democracies.", image: sitePhotos.programsLeadershipAlt },
+  { tag: "Leadership", title: "Youth leadership", desc: "Confidence, communication and participation that help young Kenyans take the lead.", image: sitePhotos.programsLeadership },
+  { tag: "Mentorship", title: "Guidance and connection", desc: "Supporting young people through shared experience, encouragement and mentorship.", image: sitePhotos.programsEducation },
+  { tag: "Civic Awareness", title: "Informed participation", desc: "Understanding rights, responsibilities and the role young people can play in their communities.", image: sitePhotos.impactCivic },
+  { tag: "Skills", title: "Learning for opportunity", desc: "Developing practical skills for personal growth and readiness for work.", image: sitePhotos.programsTechnology },
+  { tag: "Community", title: "Local participation", desc: "Encouraging young people to contribute to positive change in their communities.", image: sitePhotos.programsClimate },
+  { tag: "Opportunity", title: "Paths to move forward", desc: "Connecting youth empowerment with learning, participation and new possibilities.", image: sitePhotos.impactEntrepreneurship },
 ];
 
 function Programs() {
@@ -28,16 +26,16 @@ function Programs() {
     <>
       <PageHero
         eyebrow="Our Programs"
-        title="Eight flagship programs. One shared mission."
-        description="Every programme is designed with local communities, delivered by trained coordinators, and independently evaluated for impact."
+        title="Youth empowerment in Kenya."
+        description="Our focus areas bring together leadership, mentorship, civic awareness, practical skills and community participation."
       />
 
       <section className="py-24">
         <div className="container-page">
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {items.map((p) => (
-              <Link key={p.title} to="/projects" className="group">
-                <div className="overflow-hidden rounded-2xl mb-6 aspect-[4/5] bg-brand-surface">
+              <article key={p.title} className="group">
+                <div className="overflow-hidden rounded-lg mb-6 aspect-[4/3] bg-brand-surface">
                   <img src={p.image} alt={p.title} loading="lazy" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
                 </div>
                 <div className="flex items-center gap-3 mb-3">
@@ -46,7 +44,7 @@ function Programs() {
                 </div>
                 <h3 className="text-2xl font-bold group-hover:text-brand-green transition-colors">{p.title}</h3>
                 <p className="mt-3 text-brand-navy/60 text-sm leading-relaxed">{p.desc}</p>
-              </Link>
+              </article>
             ))}
           </div>
         </div>
