@@ -13,7 +13,7 @@ export const Route = createFileRoute("/about")({
 });
 
 const values = [
-  { title: "Youth first", desc: "We center the voices, ideas and leadership of young Africans in everything we do." },
+  { title: "Youth first", desc: "We center the voices, ideas and leadership of young Kenyans in everything we do." },
   { title: "Radical transparency", desc: "We value honesty and clear communication about our work." },
   { title: "Local ownership", desc: "We value the ideas and participation of the communities we work with." },
   { title: "Long-term impact", desc: "We aim for meaningful learning and positive community change." },

@@ -8,7 +8,7 @@ export const Route = createFileRoute("/contact")({
   head: () => ({
     meta: [
       { title: "Contact — Inua Youth Initiative" },
-      { name: "description", content: "Get in touch with Inua Youth Initiative's headquarters or regional offices." },
+      { name: "description", content: "Get in touch with Inua Youth Initiative in Kenya." },
     ],
   }),
   component: Contact,
