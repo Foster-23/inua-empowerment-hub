@@ -55,8 +55,8 @@ export function SiteFooter() {
 
         <p className="text-xs text-muted-foreground mb-6">Photography is illustrative and does not document Inua Youth Initiative activities.</p>
         <div className="pt-12 border-t border-brand-navy/10 flex flex-col md:flex-row justify-between items-center gap-6 text-[10px] uppercase tracking-widest text-brand-navy/40 font-semibold">
-          <p>© {new Date().getFullYear()} INUA YOUTH INITIATIVE. ALL RIGHTS RESERVED.</p>
-          <Link to="/about/reports" className="hover:text-brand-navy">Reports & accountability</Link>
+          <p>© {new Date().getFullYear()} INUA YOUTH INITIATIVE. ALL RIGHTS RESERVED. · <Link to="/about/reports" className="hover:text-brand-navy">Reports &amp; accountability</Link></p>
+          <p className="text-brand-navy/40">Website designed and developed by <a href="https://terraspetsolutions.co.ke" target="_blank" rel="noopener noreferrer" className="hover:text-brand-green transition-colors">Terraspet Solutions Limited</a></p>
         </div>
       </div>
     </footer>
