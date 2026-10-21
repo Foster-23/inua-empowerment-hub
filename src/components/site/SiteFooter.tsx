@@ -18,8 +18,9 @@ export function SiteFooter() {
               A Kenyan youth initiative for leadership, mentorship and opportunity for
               young people across Kenya.
             </p>
-            <div className="flex gap-3">
+            <div className="flex flex-wrap items-center gap-3">
               <a href="https://www.facebook.com/share/p/17TxKcGZ4H/" target="_blank" rel="noopener noreferrer" aria-label="Inua Youth Initiative on Facebook" className="size-10 grid place-items-center rounded-full bg-background border border-border text-brand-green"><Facebook className="size-4" /></a>
+              <a href="tel:+254741726573" className="text-sm font-bold text-brand-navy hover:text-brand-green transition-colors">0741 726 573</a>
             </div>
           </div>
 

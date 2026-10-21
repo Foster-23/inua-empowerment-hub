@@ -2,7 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
 import { PageHero } from "@/components/site/PageHero";
 import { Button } from "@/components/ui/button";
-import { Mail, MapPin, Facebook } from "lucide-react";
+import { Mail, MapPin, Facebook, Phone } from "lucide-react";
 
 export const Route = createFileRoute("/contact")({
   head: () => ({
@@ -75,15 +75,20 @@ function Contact() {
           <div className="lg:col-span-5 space-y-8">
             {[
               { icon: MapPin, title: "Location", body: "Kenya" },
+              { icon: Phone, title: "Call or WhatsApp", body: "0741 726 573", href: "tel:+254741726573" },
               { icon: Mail, title: "Message us", body: "Connect through our Facebook page." },
-            ].map(({ icon: Icon, title, body }) => (
+            ].map(({ icon: Icon, title, body, href }) => (
               <div key={title} className="flex gap-5">
                 <div className="size-12 shrink-0 grid place-items-center rounded-full bg-brand-green/10 text-brand-green">
                   <Icon className="h-5 w-5" />
                 </div>
                 <div>
                   <h3 className="text-xs uppercase tracking-widest font-bold text-brand-navy/40">{title}</h3>
-                  <p className="mt-1 font-bold">{body}</p>
+                  {href ? (
+                    <a href={href} className="mt-1 inline-block font-bold hover:text-brand-green transition-colors">{body}</a>
+                  ) : (
+                    <p className="mt-1 font-bold">{body}</p>
+                  )}
                 </div>
               </div>
             ))}
